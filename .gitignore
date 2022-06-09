@@ -1,0 +1,4 @@
+/back/node_modules/
+/client/node_modules/
+/back/.env
+.idea/
