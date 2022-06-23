@@ -47,6 +47,7 @@ export const SideMenuContent = styled.ul`
     background: #3e3f46;
     padding: 15px;
     transition: 0.5s;
+    cursor: pointer;
   }
   & > li:hover{
     background: steelblue;

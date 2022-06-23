@@ -32,6 +32,7 @@ const SideMenu = () => {
                 {(menuItem || []).map((item, index) =>
                     <li key={"side" + index}
                         className={item.is_checked ? css`animation: ${example} 1s ease-in-out; animation-fill-mode: forwards;` : ''}
+                        draggable
                         onClick={() => onChangeMenu(index)}
                         style={{zIndex: menuItem.length - index}}>
                         <a href={'/' + item}>
