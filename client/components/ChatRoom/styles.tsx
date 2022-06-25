@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import {keyframes} from "@emotion/react";
 
-export const SideMenuContainer = styled.aside`
-  width: 30%;
+export const ChatRoomContainer = styled.section`
+  width: 70%;
   height: 100%;
 `;
 

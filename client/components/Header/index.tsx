@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Container, DownloadButton, fadein, HomeButton} from './styles';
 import { css } from '@emotion/css'
-import {example} from "@components/SideMenu/styles";
 
 const Main = () => {
     const [menuItem, setMenuItem] = useState([{

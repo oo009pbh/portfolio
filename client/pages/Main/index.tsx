@@ -1,45 +1,68 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import loadable from "@loadable/component";
 
 // Styles
-import {blink, Container, typing} from '@pages/Main/styles';
+import {Container, initial, chat, general} from '@pages/Main/styles';
 import {css} from "@emotion/css";
-
 // Components
 const Header = loadable(() => import('@components/Header'));
+const SideMenu = loadable(() => import('@components/SideMenu'));
+const ChatRoom = loadable(() => import('@components/ChatRoom'));
 
 const Main = () => {
+    const [menuItem, setMenuItem] = useState([{
+            name: 'Messenger',
+            is_checked: true
+        },{
+            name: 'TimeLine',
+            is_checked: false
+        },{
+            name: 'Skills',
+            is_checked: false
+        },{
+            name: 'Projects',
+            is_checked: false
+        }]);
+    const [mode, setMode] = useState("initial");
+    const [animation, setAnimation] = useState(css`animation: ${initial} 1s ease-in-out; animation-fill-mode: both;`);
+
+    useEffect(() => {
+        switch (mode) {
+            case "chat":
+                setAnimation(css`animation: ${chat} 1s ease-in-out; animation-fill-mode: both;`)
+                break
+            case "general":
+                setAnimation(css`animation: ${general} 1s ease-in-out; animation-delay: 1.1s; animation-fill-mode: both;`)
+                break
+            default:
+                break
+        }
+    }, [mode]);
+
+    const onChangeMenu = (index: number) => {
+        let newMenu = JSON.parse(JSON.stringify(menuItem));
+        if (newMenu[index].is_checked) {
+            return;
+        } else {
+            newMenu = (newMenu || []).map((item: object, m_index: number) =>
+                Object.assign(item, {is_checked: m_index === index})
+            )
+        }
+        if (newMenu[0].is_checked) {
+            setMode('chat');
+        } else {
+            setMode('general')
+        }
+        setMenuItem(newMenu);
+    }
+
+
     return(
         <Container>
-            <section>
-                <span>
-                    <p className={css`animation: ${typing} 2s steps(9), ${blink} .5s step-end infinite alternate;`}>
-                        안녕하세요,
-                    </p>
-                </span>
-                <ul>
-                    <li>
-                        <a href={"/timeline"}>
-                            배움을 즐기며 성장하고
-                        </a>
-                    </li>
-                    <li>
-                        <a href={"/skills"}>
-                            어떤 기술이든 도전하며
-                        </a>
-                    </li>
-                    <li>
-                        <a href={"/projects"}>
-                            행동하는 개발자
-                        </a>
-                    </li>
-                </ul>
-                <span>
-                    <p className={css`animation: ${typing} 2s steps(9), ${blink} .5s step-end infinite alternate;`}>
-                        박병훈입니다.
-                    </p>
-                </span>
-            </section>
+            <article className={animation}>
+                <SideMenu onChangeMenu={onChangeMenu} menuItem={menuItem} mode={mode}/>
+                <ChatRoom onChangeMenu={onChangeMenu} menuItem={menuItem} mode={mode}/>
+            </article>
         </Container>
     );
 };

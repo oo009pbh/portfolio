@@ -2,7 +2,7 @@ import React from 'react';
 import loadable from "@loadable/component";
 
 // Styles
-import {blink, Container, typing} from '@pages/Main/styles';
+import {Container} from '@pages/Main/styles';
 import {css} from "@emotion/css";
 import {fadein} from "@components/Header/styles";
 

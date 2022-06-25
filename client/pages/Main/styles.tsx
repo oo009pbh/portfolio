@@ -1,63 +1,72 @@
 import styled from '@emotion/styled';
 import {keyframes} from "@emotion/react";
 
-export const Container = styled.div`
+export const Container = styled.main`
   font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
   height: 100vh;
   width: 100vw;
   position: relative;
-  & > section {
+  background-color: #E4F2F2;
+  & > article {
+    height: 90%;
+    width: 90%;
     position: absolute;
-    width: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #E2ECEB;
+    border-radius: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    & span {
-      display: flex;
-      align-items: center;
+    justify-content: center;
+    & > aside {
+      width: 25%;
     }
-    & > span:last-child {
-      justify-content: end;
-    }
-    & span > p {
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid;
-      font-family: seoul-hangang-jung-m,serif;
-      font-size: 2em;
-    }
-    & > ul {
-      font-weight: 700;
-      font-size: 1.5em;
-      padding: 0;
-      display: flex;
-      justify-content: space-between;
-      & > li {
-        position: relative;
-        list-style: none;
-        cursor: pointer;
-      }
-      & > li > a {
-        text-decoration: none;
-        color: black;
-      }
+    & > section {
+      width: 75%;
     }
   }
 `;
 
-export const typing = keyframes`
-  0% {
+export const initial = keyframes`
+  from {
     width: 0;
+    height: 0;
+    top: 10%;
+    left: 10%;
+    transform: translate(-10%, -10%);
   }
-  95% {
-    width: content-box;
+  to {
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 `
-export const blink = keyframes`
-  50% {
-    border-color: transparent
+
+export const chat = keyframes`
+  from {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  to {
+    width: 90%;
+    height: 90%;
+    border-radius: 30px;
+  }
+`
+
+export const general = keyframes`
+  from {
+    width: 90%;
+    height: 90%;
+    border-radius: 30px;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
   }
 `
