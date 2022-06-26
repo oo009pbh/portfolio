@@ -5,6 +5,7 @@ export const Container = styled.main`
   font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   position: relative;
   background-color: #E4F2F2;
   & > article {
@@ -14,16 +15,16 @@ export const Container = styled.main`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #E2ECEB;
+    background-color: #F8F9FD;
     border-radius: 30px;
     box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
     display: flex;
     justify-content: center;
     & > aside {
-      width: 25%;
+      width: 20%;
     }
     & > section {
-      width: 75%;
+      width: 80%;
     }
   }
 `;

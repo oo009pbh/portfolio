@@ -8,3 +8,12 @@ export interface MEnuItem {
     name: string;
     is_checked: boolean;
 }
+
+export interface MEssageList {
+    messages: Array<MEssages>;
+}
+
+export interface MEssages {
+    text: string;
+    position: string;
+}

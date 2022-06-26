@@ -10,14 +10,26 @@ export const Profile = styled.div`
   height: 0;
   background-color: #3C5654;
   border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  & > span:nth-child(2) {
+    margin-top: 10px;
+    font-size: 20px;
+    color:white;
+  }
+  & > span:nth-child(3) {
+    font-size: 14px;
+    color:white;
+  }
 `;
 
 export const Menu = styled.ul`
   margin: 0;
   height: 0;
   border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
   background-color: #425C5A;
   overflow: hidden;
   & > li {
@@ -26,11 +38,11 @@ export const Menu = styled.ul`
     width: 100%;
     height: 50px;
     line-height: 50px;
-    color: #E2ECEB;
+    color: #F8F9FD;
     cursor: pointer;
   }
   & > li.active {
-    background-color: #E2ECEB;
+    background-color: #F8F9FD;
     color: black;
     border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;

@@ -3,6 +3,9 @@ import {SideMenuContainer, Profile, Menu, profileWiden, profileShrink, menuWiden
 import {MessageOutlined, FieldTimeOutlined, ProjectOutlined, ToolOutlined} from '@ant-design/icons';
 import { SIdeMenu } from '@typings/main';
 import { css } from '@emotion/css'
+import 'antd/dist/antd.css';
+import { Avatar, Image } from 'antd';
+
 
 const SideMenu: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
 
@@ -53,7 +56,11 @@ const SideMenu: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
 
     return(
         <SideMenuContainer>
-            <Profile className={animation.profile}/>
+            <Profile className={animation.profile}>
+                <Avatar size={100}>병훈</Avatar>
+                <span>박병훈</span>
+                <span>oo009pbh@gmail.com</span>
+            </Profile>
             <Menu className={animation.menu}>
                 {
                     (menuItem || []).map((item, index) =>
