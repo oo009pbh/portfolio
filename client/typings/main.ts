@@ -6,6 +6,7 @@ export interface SIdeMenu {
 
 export interface MEnuItem {
     name: string;
+    url: string;
     is_checked: boolean;
 }
 

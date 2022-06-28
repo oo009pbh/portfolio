@@ -16,19 +16,19 @@ const SideMenu: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
 
     useEffect(() => {
         switch (mode) {
+            case "initial":
+                break
             case "chat":
                 setAnimation({
                     profile: css`animation: ${profileWiden} 0.5s ease-in-out; animation-delay: 1s; animation-fill-mode: both`,
                     menu: css`animation: ${menuWiden} 0.5s ease-in-out; animation-delay: 1.5s; animation-fill-mode: both`,
                 });
                 break
-            case "general":
+            default:
                 setAnimation({
                     profile: css`animation: ${profileShrink} 0.5s ease-in-out; animation-delay: 0.6s; animation-fill-mode: both`,
                     menu: css`animation: ${menuShrink} 0.5s ease-in-out; animation-delay: 0.1s; animation-fill-mode: both`,
                 });
-                break
-            default:
                 break
         }
     }, [mode]);

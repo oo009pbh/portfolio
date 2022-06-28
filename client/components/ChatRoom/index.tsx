@@ -13,7 +13,6 @@ const initialMessage = [
 
 
 const ChatRoom: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
-
     const [animation, setAnimation] = useState(css`animation: ${chatRoomWiden} 0.5s ease-in-out; animation-delay: 2s; animation-fill-mode: both;`);
     const [isLoading, setIsLoading] = useState(true);
     const [messages, setMessages] = useState([]);
@@ -41,13 +40,13 @@ const ChatRoom: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
 
     useEffect(() => {
         switch (mode) {
+            case "initial":
+                break
             case "chat":
                 setAnimation(css`animation: ${chatRoomWiden} 0.5s ease-in-out; animation-delay: 2s; animation-fill-mode: both;`);
                 break
-            case "general":
-                setAnimation(css`animation: ${chatRoomShrink} 1s ease-in-out; animation-fill-mode: both;`);
-                break
             default:
+                setAnimation(css`animation: ${chatRoomShrink} 1s ease-in-out; animation-fill-mode: both;`);
                 break
         }
     }, [mode]);

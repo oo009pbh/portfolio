@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import loadable from "@loadable/component";
+import { useNavigate } from "react-router-dom";
 
 // Styles
 import {Container, initial, chat, general} from '@pages/Main/styles';
@@ -12,29 +13,35 @@ const ChatRoom = loadable(() => import('@components/ChatRoom'));
 const Main = () => {
     const [menuItem, setMenuItem] = useState([{
             name: 'Messenger',
+            url: 'main',
             is_checked: true
         },{
             name: 'TimeLine',
+            url: 'timeline',
             is_checked: false
         },{
             name: 'Skills',
+            url: 'skills',
             is_checked: false
         },{
             name: 'Projects',
+            url: 'projects',
             is_checked: false
         }]);
     const [mode, setMode] = useState("initial");
     const [animation, setAnimation] = useState(css`animation: ${initial} 1s ease-in-out; animation-fill-mode: both;`);
+    const navigate = useNavigate();
 
     useEffect(() => {
         switch (mode) {
-            case "chat":
-                setAnimation(css`animation: ${chat} 1s ease-in-out; animation-fill-mode: both;`)
+            case "initial":
                 break
-            case "general":
-                setAnimation(css`animation: ${general} 1s ease-in-out; animation-delay: 1.1s; animation-fill-mode: both;`)
+            case "chat":
+                setAnimation(css`animation: ${chat} 1s ease-in-out; animation-fill-mode: both;`);
                 break
             default:
+                setAnimation(css`animation: ${general} 1s ease-in-out; animation-delay: 1.1s; animation-fill-mode: both;`);
+                setTimeout(() => navigate("/" + mode), 2100);
                 break
         }
     }, [mode]);
@@ -51,11 +58,10 @@ const Main = () => {
         if (newMenu[0].is_checked) {
             setMode('chat');
         } else {
-            setMode('general')
+            setMode(newMenu[index].url);
         }
         setMenuItem(newMenu);
     }
-
 
     return(
         <Container>
