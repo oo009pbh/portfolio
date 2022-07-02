@@ -5,13 +5,14 @@ import { useNavigate } from "react-router-dom";
 // Styles
 import {Container, initial, chat, general} from '@pages/Main/styles';
 import {css} from "@emotion/css";
+
 // Components
-const Header = loadable(() => import('@components/Header'));
 const SideMenu = loadable(() => import('@components/SideMenu'));
 const ChatRoom = loadable(() => import('@components/ChatRoom'));
 
 const Main = () => {
-    const [menuItem, setMenuItem] = useState([{
+    const [menuItem, setMenuItem] = useState([
+        {
             name: 'Messenger',
             url: 'main',
             is_checked: true
@@ -27,7 +28,8 @@ const Main = () => {
             name: 'Projects',
             url: 'projects',
             is_checked: false
-        }]);
+        }]
+    );
     const [mode, setMode] = useState("initial");
     const [animation, setAnimation] = useState(css`animation: ${initial} 1s ease-in-out; animation-fill-mode: both;`);
     const navigate = useNavigate();

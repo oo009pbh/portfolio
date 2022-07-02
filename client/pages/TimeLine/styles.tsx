@@ -1,63 +1,239 @@
 import styled from '@emotion/styled';
+import {css} from "@emotion/css";
 import {keyframes} from "@emotion/react";
 
-export const Container = styled.div`
+const fillLeft = keyframes `
+    100% {
+        right: 100%;
+    }
+`
+
+const fillTop = keyframes `
+    100% {
+        top: 100%;
+    }
+`
+
+const fillLeftOdd = keyframes `
+    100% {
+        left: 100%;
+    }
+`
+
+export const TimeLineContainer = styled.div`
   font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
-  height: 100vh;
+  height: max-content;
+  min-height: 100vh;
   width: 100vw;
+`;
+
+export const TimeLineContent = styled.div`
+  background-color: #F8F9FD;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  min-height: 100vh;
+`;
+
+export const TimeLineBoxContainer = styled.div`
   position: relative;
-  & > section {
-    position: absolute;
-    width: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    & span {
-      display: flex;
-      align-items: center;
+  display: flex;
+  margin: 20px 0;
+  border-radius: 6px;
+  align-self: center;
+  width: 50vw;
+  &:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+    & div.date {
+      border-radius: 0 6px 6px 0;
     }
-    & > span:last-child {
-      justify-content: end;
+    & div.content {
+      border-radius: 6px 0 0 6px;
     }
-    & span > p {
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid;
-      font-family: seoul-hangang-jung-m,serif;
-      font-size: 2em;
-    }
-    & > ul {
-      font-weight: 700;
-      font-size: 1.5em;
-      padding: 0;
-      display: flex;
-      justify-content: space-between;
-      & > li {
-        position: relative;
-        list-style: none;
-        cursor: pointer;
+
+    & div.icon {
+      &:before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background: #f6a4ec;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: auto;
+        z-index: 0;
+        transform: translateX(-50%);
+        animation: ${fillTop} 2s forwards 4s ease-in-out;
       }
-      & > li > a {
-        text-decoration: none;
-        color: black;
+      &:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #f6a4ec;
+        position: absolute;
+        right: 0;
+        z-index: 0;
+        top: 50%;
+        left: auto;
+        transform: translateY(-50%);
+        animation: ${fillLeft} 2s forwards 4s ease-in-out;
+      }
+    }
+  }
+
+  & div.title {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #9251ac;
+    letter-spacing: 1.5px;
+  }
+  & div.content {
+    padding: 20px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    background: #fff;
+    width: calc(40vw - 84px);
+    border-radius: 0 6px 6px 0;
+  }
+  & div.date {
+    color: #f6a4ec;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: #9251ac;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0 20px;
+    border-radius: 6px 0 0 6px;
+    z-index: 1;
+  }
+  & div.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9251ac;
+    align-self: center;
+    margin: 0 20px;
+    background: #f6a4ec;
+    border-radius: 100%;
+    width: 40px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+    0 18px 36px -18px rgba(0, 0, 0, 0.3),
+      0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    padding: 40px;
+    height: 40px;
+    position: relative;
+
+    & > svg {
+      font-size: 32px;
+      z-index: 1;
+    }
+
+    &:before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: #f6a4ec;
+      position: absolute;
+      top: 0;
+      z-index: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: ${fillTop} 2s both 4s ease-in-out;
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background: #f6a4ec;
+      position: absolute;
+      left: 0;
+      z-index: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: ${fillLeftOdd} 2s forwards 4s ease-in-out;
+    }
+  }
+  
+  & div.description {
+    flex-basis: 60%;
+  }
+
+  &.type2 {
+    &:after {
+      background: #555ac0;
+    }
+    & div.date {
+      color: #87bbfe;
+      background: #555ac0;
+    }
+
+    &:nth-child(2n + 1) {
+      &  div.icon {
+        &:before,
+        &:after {
+          background: #87bbfe;
+        }
+      }
+    }
+
+    &  div.icon {
+      background: #87bbfe;
+      color: #555ac0;
+      &:before,
+      &:after {
+        background: #87bbfe;
+      }
+    }
+    &  div.title {
+      color: #555ac0;
+    }
+    &  div.title {
+    }
+  }
+
+  &.type3 {
+    &:after {
+      background: #24b47e;
+    }
+    &  div.date {
+      color: #aff1b6;
+      background-color: #24b47e;
+    }
+
+    &:nth-child(2n + 1) {
+      &  div.icon {
+        &:before,
+        &:after {
+          background: #aff1b6;
+        }
+      }
+    }
+
+    & div.icon {
+      background: #aff1b6;
+      color: #24b47e;
+      &:before,
+      &:after {
+        background: #aff1b6;
+      }
+    }
+    &  div.title {
+      color: #24b47e;
+    }
+    &  div.title {
+    }
+  }
+  
+  &:last-child {
+    & div.icon {
+      &:before {
+        content: none;
       }
     }
   }
 `;
-
-export const typing = keyframes`
-  0% {
-    width: 0;
-  }
-  95% {
-    width: content-box;
-  }
-`
-export const blink = keyframes`
-  50% {
-    border-color: transparent
-  }
-`

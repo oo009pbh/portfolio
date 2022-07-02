@@ -6,7 +6,7 @@ import MessageInput from './MessageInput'
 import { css } from '@emotion/css'
 
 const initialMessage = [
-    { text: '안녕하세요!', position: 'left' },
+    { text: '안녕하세요! 소통에 자신있는 프론트엔드 개발자 박병훈 입니다!', position: 'left' },
     { text: '저의 웹 포트폴리오에 방문해주셔서 감사합니다!', position: 'left' },
     { text: '궁금하신점이 있으시면 채팅을 입력해주세요!', position: 'left' }
 ]

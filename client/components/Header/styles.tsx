@@ -3,55 +3,56 @@ import {keyframes} from "@emotion/react";
 
 export const Container = styled.nav`
   font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
-  height: 50px;
+  width: 100%;
+  height: 56px;
   border-bottom: 1px solid;
+  position: fixed;
   display: flex;
-  justify-content: space-around;
-  opacity: 0;
+  overflow: hidden;
+  z-index: 100;
+  & > span {
+    background-color: #3C5654;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > span {
+    }
+  }
   & > ul {
-    flex-basis: 50%;
-    width: 100%;
-    height: 100%;
+    width: 0;
+    height: 56px;
+    background-color: #3C5654;
     text-decoration: none;
     font-weight: 700;
     display: flex;
     justify-content: space-around;
     padding: 0;
     & > li {
-      position: relative;
       list-style: none;
       cursor: pointer;
+      color: #f6f4e6;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      text-transform: capitalize;
+    }
+    & > li:hover {
+      color: #fddb3a;
     }
   }
 `;
 
-export const HomeButton = styled.button`
-  font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
-  all: unset;
-  flex-basis: 25%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-`;
-
-export const DownloadButton = styled.button`
-  font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
-  all: unset;
-  flex-basis: 25%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-`;
-
-export const fadein = keyframes`
+export const headerWiden = keyframes`
   from {
-    opacity: 0;
+    width: 0;
   }
   to {
-    opacity: 1;
+    width: 80%;
   }
 `

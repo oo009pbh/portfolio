@@ -24,6 +24,9 @@ export const Profile = styled.div`
     font-size: 14px;
     color:white;
   }
+  & > span.none {
+    display: none;
+  }
 `;
 
 export const Menu = styled.ul`
@@ -69,9 +72,11 @@ export const profileWiden = keyframes`
 export const profileShrink = keyframes`
   0% {
     height: 35%;
+    border-top-left-radius: 30px;
   }
   100% {
-    height: 0;
+    height: 56px;
+    border-top-left-radius: 0;
   }
 `
 
@@ -97,5 +102,27 @@ export const menuShrink = keyframes`
     height: 0;
     padding-left: 15px;
     padding-top: 0;
+  }
+`
+
+export const avatarWiden = keyframes`
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+  }
+`
+
+export const avatarShrink = keyframes`
+  0% {
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    width: 40px;
+    height: 40px;
   }
 `

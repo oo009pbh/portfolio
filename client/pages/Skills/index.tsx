@@ -4,7 +4,6 @@ import loadable from "@loadable/component";
 // Styles
 import {Container} from '@pages/Main/styles';
 import {css} from "@emotion/css";
-import {fadein} from "@components/Header/styles";
 
 // Components
 const Header = loadable(() => import('@components/Header'));

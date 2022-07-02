@@ -1,39 +1,43 @@
 import React, {useState} from 'react';
-import {Container, DownloadButton, fadein, HomeButton} from './styles';
+import {Container, headerWiden} from './styles';
 import { css } from '@emotion/css'
+import 'antd/dist/antd.css';
+import { Avatar, Image } from 'antd';
+import { useNavigate, useLocation } from "react-router-dom";
 
-const Main = () => {
+const Header = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
     const [menuItem, setMenuItem] = useState([{
-        name: 'About',
+        name: 'main',
         is_checked: false
     },{
-        name: 'TimeLine',
+        name: 'timeline',
         is_checked: false
     },{
-        name: 'Skills',
+        name: 'skills',
         is_checked: false
     },{
-        name: 'Projects',
+        name: 'projects',
         is_checked: false
     }]);
 
     return(
-        <Container className={css`animation: ${fadein} 2s ease-in-out; animation-delay: 5s; animation-fill-mode: forwards;`}>
-            <HomeButton>
-                main
-            </HomeButton>
-            <ul>
+        <Container>
+            <span>
+                <Avatar size={40}>병훈</Avatar>
+            </span>
+            <ul className={css`animation: ${headerWiden} 1s ease; animation-fill-mode: both;`}>
                 {(menuItem).map(item =>
-                    <li>
+                    <li style={location.pathname.includes(item.name) ? {color: "#fddb3a" } : {}}
+                        onClick={() => navigate("/" + item.name)}
+                    >
                         {item.name}
                     </li>
                 )}
             </ul>
-            <DownloadButton>
-                download
-            </DownloadButton>
         </Container>
     );
 };
 
-export default Main;
+export default Header;

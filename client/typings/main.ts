@@ -18,3 +18,12 @@ export interface MEssages {
     text: string;
     position: string;
 }
+
+export interface TImeLine {
+    content: string;
+    date: string;
+    icon: string;
+    title: string;
+    index: number;
+    animation: string;
+}
