@@ -31,3 +31,9 @@ export interface TImeLine {
 export interface HEader {
     animationMode: string;
 }
+
+export interface CIrcle {
+    percent: number;
+    width: number;
+    height: number;
+}

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import loadable from "@loadable/component";
 
 // Styles
-import {SkillsContainer} from './styles';
+import { SkillsBox, SkillsContainer } from "./styles";
 import {css} from "@emotion/css";
 
 // Components
@@ -13,7 +13,9 @@ const Skills = () => {
     return(
         <SkillsContainer>
             <Header/>
-            <CircleProgressBar/>
+            <SkillsBox>
+              <CircleProgressBar percent={60} width={500} height={500}/>
+            </SkillsBox>
         </SkillsContainer>
     );
 };
