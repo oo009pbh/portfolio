@@ -1,20 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import loadable from "@loadable/component";
 
 // Styles
-import {Container} from '@pages/Main/styles';
+import {ProjectsContainer} from './styles';
 import {css} from "@emotion/css";
 
 // Components
 const Header = loadable(() => import('@components/Header'));
 
-const Main = () => {
+const Projects = () => {
     return(
-        <Container>
+        <ProjectsContainer>
             <Header/>
-            프로젝트들
-        </Container>
+
+        </ProjectsContainer>
     );
 };
 
-export default Main;
+export default Projects;

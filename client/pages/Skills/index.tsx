@@ -1,20 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import loadable from "@loadable/component";
 
 // Styles
-import {Container} from '@pages/Main/styles';
+import {SkillsContainer} from './styles';
 import {css} from "@emotion/css";
 
 // Components
 const Header = loadable(() => import('@components/Header'));
+const CircleProgressBar = loadable(() => import('./CircleProgressBar'));
 
-const Main = () => {
+const Skills = () => {
     return(
-        <Container>
+        <SkillsContainer>
             <Header/>
-            스킬들
-        </Container>
+            <CircleProgressBar/>
+        </SkillsContainer>
     );
 };
 
-export default Main;
+export default Skills;

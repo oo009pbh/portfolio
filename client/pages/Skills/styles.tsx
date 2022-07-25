@@ -1,63 +1,60 @@
 import styled from '@emotion/styled';
+import {css} from "@emotion/css";
 import {keyframes} from "@emotion/react";
 
-export const Container = styled.div`
+export const SkillsContainer = styled.div`
   font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
   height: 100vh;
   width: 100vw;
-  position: relative;
-  & > section {
-    position: absolute;
-    width: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    & span {
-      display: flex;
-      align-items: center;
+`;
+
+export const CircleContainer = styled.div`
+  font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 100px;
+  
+  svg {
+    width: 114px;
+    height: 114px;
+    margin: 1em;
+    position: relative;
+    & > image {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      transform: translate(10%, 10%);
     }
-    & > span:last-child {
-      justify-content: end;
+  }
+
+  .bg {
+    fill: none;
+    stroke-width: 5px;
+    stroke: #1A2C34;
+  }
+
+  [class^="meter-"] {
+    fill: none;
+    stroke-width: 5px;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+
+  }
+
+  .meter-1 {
+    stroke-dasharray: 360;
+    stroke-dashoffset: 200;
+    stroke: aqua;
+    animation: progress-1 1s ease-out;
+  }
+
+  @keyframes progress-1 {
+    from {
+      stroke-dashoffset: 360;
     }
-    & span > p {
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid;
-      font-family: seoul-hangang-jung-m,serif;
-      font-size: 2em;
-    }
-    & > ul {
-      font-weight: 700;
-      font-size: 1.5em;
-      padding: 0;
-      display: flex;
-      justify-content: space-between;
-      & > li {
-        position: relative;
-        list-style: none;
-        cursor: pointer;
-      }
-      & > li > a {
-        text-decoration: none;
-        color: black;
-      }
+    to {
+      stroke-dashoffset: 200;
     }
   }
 `;
-
-export const typing = keyframes`
-  0% {
-    width: 0;
-  }
-  95% {
-    width: content-box;
-  }
-`
-export const blink = keyframes`
-  50% {
-    border-color: transparent
-  }
-`

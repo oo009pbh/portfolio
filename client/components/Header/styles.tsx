@@ -5,7 +5,6 @@ export const Container = styled.nav`
   font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
   width: 100%;
   height: 56px;
-  border-bottom: 1px solid;
   position: fixed;
   display: flex;
   overflow: hidden;
@@ -16,12 +15,14 @@ export const Container = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid;
     & > span {
     }
   }
   & > ul {
     width: 0;
     height: 56px;
+    border-bottom: 1px solid;
     background-color: #3C5654;
     text-decoration: none;
     font-weight: 700;

@@ -43,7 +43,7 @@ const Main = () => {
                 break
             default:
                 setAnimation(css`animation: ${general} 1s ease-in-out; animation-delay: 1.1s; animation-fill-mode: both;`);
-                setTimeout(() => navigate("/" + mode), 2100);
+                setTimeout(() => navigate("/" + mode + "?fromMain=true"), 2100);
                 break
         }
     }, [mode]);

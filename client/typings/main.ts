@@ -27,3 +27,7 @@ export interface TImeLine {
     index: number;
     animation: string;
 }
+
+export interface HEader {
+    animationMode: string;
+}
