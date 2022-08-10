@@ -36,4 +36,5 @@ export interface CIrcle {
     percent: number;
     width: number;
     height: number;
+    description: string;
 }

@@ -3,26 +3,63 @@ import {css} from "@emotion/css";
 import {keyframes} from "@emotion/react";
 import { CIrcle } from "@typings/main";
 
-export const SkillsContainer = styled.div`
+export const SkillsContainer = styled.section`
   font-family: Slack-Larsseit, Helvetica Neue, Helvetica, Segoe UI, Tahoma, Arial, sans-serif;
   height: 100vh;
   width: 100vw;
 `;
 
-export const SkillsBox = styled.div`
+export const SkillContent = styled.article`
   padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  & h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    text-transform: Uppercase;
+    font-size: 30px;
+  }
 `;
 
-export const CircleContainer = styled.svg<CIrcle>`
+export const SkillsBox = styled.div`
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & div.left {
+    flex-basis: 45%;
+  }
+  & div.right {
+    flex-basis: 45%;
+  }
+`;
+
+export const CircleContainer = styled.div`
+  display: inline-block;
+  
+  & p {
+    font-family: 'Helvetica Neue', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    text-transform: Uppercase;
+    font-size: 20px;
+  }
+`;
+
+export const Circle = styled.svg<CIrcle>`
   width: ${(props) => props.width + 'px'};
   height: ${(props) => props.height + 'px'};
   position: relative;
   margin: 1em;
   & > image {
     position: absolute;
-    width: 80%;
-    height: 80%;
-    transform: translate(10%, 10%);
+    width: 60%;
+    height: 60%;
+    transform: translate(20%, 20%);
   }
 
   .bg {
