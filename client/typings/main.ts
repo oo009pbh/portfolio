@@ -37,4 +37,5 @@ export interface CIrcle {
     width: number;
     height: number;
     description: string;
+    color: string;
 }

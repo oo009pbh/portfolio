@@ -6,6 +6,8 @@ import queryString from 'query-string';
 import { Avatar, Image } from 'antd';
 import { useNavigate, useLocation } from "react-router-dom";
 
+import imoji1 from '@profile/AR_imoji1.jpg'
+
 const Header = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -28,7 +30,7 @@ const Header = () => {
     return(
         <Container>
             <span>
-                <Avatar size={40}>병훈</Avatar>
+                <Avatar src={imoji1} size={40}>병훈</Avatar>
             </span>
             <ul style={qs?.fromMain ? {} : {width:"80%"}}
                 className={qs?.fromMain ? css`animation: ${headerWiden} 1s ease; animation-fill-mode: both;` : ''}>

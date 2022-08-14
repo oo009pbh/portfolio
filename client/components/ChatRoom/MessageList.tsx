@@ -7,6 +7,8 @@ import 'moment/locale/ko'
 import 'antd/dist/antd.css';
 import { Avatar, Image, Divider } from 'antd';
 
+import imoji1 from '@profile/AR_imoji1.jpg'
+
 const MessageList: FC<MEssageList> = ({messages}) => {
     const [now, setNow] = useState('');
 
@@ -21,7 +23,11 @@ const MessageList: FC<MEssageList> = ({messages}) => {
             <Divider plain>{now}</Divider>
             {messages.map((msg, index) => (
                 <Balloon key={index} position={msg.position} >
-                    <Avatar>병훈</Avatar>
+                    <div>
+                        <Avatar src={imoji1}/>
+                        박병훈
+                        <time>{moment(new Date()).format("YYYY.MM.DD")}</time>
+                    </div>
                     <Text>
                         {msg.text}
                     </Text>

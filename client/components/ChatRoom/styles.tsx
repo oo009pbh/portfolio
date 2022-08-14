@@ -31,6 +31,12 @@ export const Balloon = styled.div<{ position: string }>`
   max-width: 70%;
   display: flex;
   flex-direction: column;
+  font-family: 'Helvetica Neue', sans-serif;
+  
+  & > div > time{
+    margin-left: 10px;
+    font-size: 8px;
+  }
 `;
 
 export const Text = styled.span`

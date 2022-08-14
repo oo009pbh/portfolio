@@ -25,6 +25,7 @@ const config: Configuration = {
       '@utils': path.resolve(__dirname, 'utils'),
       '@typings': path.resolve(__dirname, 'typings'),
       '@logo': path.resolve(__dirname, 'assets/logo'),
+      '@profile': path.resolve(__dirname, 'assets/profile'),
     },
   },
   entry: {
@@ -60,7 +61,7 @@ const config: Configuration = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg)$/,
+        test: /\.(png|svg|jpg)$/,
         use: [
           {
             loader: 'file-loader',

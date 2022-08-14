@@ -20,7 +20,7 @@ import NpmLogo from '@logo/npm.svg'
 // Typings
 import { CIrcle } from "@typings/main";
 
-const CircleProgressBar: FC<CIrcle> = ({percent, width, height, description}) => {
+const CircleProgressBar: FC<CIrcle> = ({percent, width, height, description, color}) => {
 
     const selectImage = (description:string) => {
         switch (description) {
@@ -58,10 +58,10 @@ const CircleProgressBar: FC<CIrcle> = ({percent, width, height, description}) =>
     }
     return(
         <CircleContainer>
-            <Circle percent={percent} width={width} height={height} description={description}>
+            <Circle percent={percent} width={width} height={height} description={description} color={color}>
                 <image href={selectImage(description)}/>
                 <circle className="bg" cx={width / 2} cy={height / 2} r={width / 2 - 5}/>
-                <circle className="meter-1" cx={width / 2} cy={height / 2} r={width / 2 - 5}/>
+                <circle className="meter" cx={width / 2} cy={height / 2} r={width / 2 - 5}/>
                 <text x={width / 2 - 10} y={(height / 10) * 9} className="animated fadeIn delay-1">{percent + "%"}</text>
             </Circle>
             <p>{description}</p>

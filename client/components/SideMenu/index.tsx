@@ -6,6 +6,8 @@ import { css } from '@emotion/css'
 import 'antd/dist/antd.css';
 import { Avatar, Image } from 'antd';
 
+import imoji1 from '@profile/AR_imoji1.jpg'
+
 
 const SideMenu: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
 
@@ -60,7 +62,7 @@ const SideMenu: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
     return(
         <SideMenuContainer>
             <Profile className={animation.profile}>
-                <Avatar className={animation.avatar}>병훈</Avatar>
+                <Avatar src={imoji1} className={animation.avatar}>병훈</Avatar>
                 <span className={(mode === 'chat'|| mode === 'initial') ? '' : 'none' }>박병훈</span>
                 <span className={(mode === 'chat'|| mode === 'initial') ? '' : 'none' }>oo009pbh@gmail.com</span>
             </Profile>
