@@ -1,12 +1,19 @@
 import React, {useEffect, useState, FC} from 'react';
-import {SideMenuContainer, Profile, Menu, profileWiden, profileShrink, menuWiden, menuShrink, avatarWiden, avatarShrink} from './styles';
-import {MessageOutlined, FieldTimeOutlined, ProjectOutlined, ToolOutlined} from '@ant-design/icons';
-import { SIdeMenu } from '@typings/main';
+import loadable from "@loadable/component";
+import imoji1 from '@profile/AR_imoji1.jpg'
+
+// Styles
 import { css } from '@emotion/css'
 import 'antd/dist/antd.css';
-import { Avatar, Image } from 'antd';
+import {SideMenuContainer, Profile, Menu, profileWiden, profileShrink, menuWiden, menuShrink, avatarWiden, avatarShrink} from './styles';
 
-import imoji1 from '@profile/AR_imoji1.jpg'
+// Components
+import { Avatar, Image } from 'antd';
+import {MessageOutlined, FieldTimeOutlined, ProjectOutlined, ToolOutlined} from '@ant-design/icons';
+const ImojiAvatar = loadable(() => import('@components/ImojiAvatar'));
+
+// Typings
+import { SIdeMenu } from '@typings/main';
 
 
 const SideMenu: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
@@ -62,7 +69,7 @@ const SideMenu: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
     return(
         <SideMenuContainer>
             <Profile className={animation.profile}>
-                <Avatar src={imoji1} className={animation.avatar}>병훈</Avatar>
+                <ImojiAvatar size={100} className={animation.avatar}>병훈</ImojiAvatar>
                 <span className={(mode === 'chat'|| mode === 'initial') ? '' : 'none' }>박병훈</span>
                 <span className={(mode === 'chat'|| mode === 'initial') ? '' : 'none' }>oo009pbh@gmail.com</span>
             </Profile>

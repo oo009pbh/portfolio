@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface SIdeMenu {
     onChangeMenu: (index: number) => void;
     menuItem: Array<MEnuItem>;
@@ -38,4 +40,14 @@ export interface CIrcle {
     height: number;
     description: string;
     color: string;
+}
+
+export interface PRofileModal {
+    isShowing: boolean;
+    hide: React.MouseEventHandler<HTMLElement>;
+}
+
+export interface AVatar {
+    size: number;
+    className?: string;
 }

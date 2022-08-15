@@ -26,6 +26,7 @@ const config: Configuration = {
       '@typings': path.resolve(__dirname, 'typings'),
       '@logo': path.resolve(__dirname, 'assets/logo'),
       '@profile': path.resolve(__dirname, 'assets/profile'),
+      '@icon': path.resolve(__dirname, 'assets/icon'),
     },
   },
   entry: {

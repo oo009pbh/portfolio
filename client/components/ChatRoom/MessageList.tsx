@@ -1,13 +1,20 @@
 import React, {useEffect, useState, FC} from 'react';
-import {MessageListContainer, Balloon, Text} from './styles';
-import {MEssageList} from '@typings/main';
-import { css } from '@emotion/css'
 import moment from "moment";
 import 'moment/locale/ko'
-import 'antd/dist/antd.css';
+import loadable from "@loadable/component";
+
+// Components
+const ImojiAvatar = loadable(() => import('@components/ImojiAvatar'));
 import { Avatar, Image, Divider } from 'antd';
 
-import imoji1 from '@profile/AR_imoji1.jpg'
+// Styles
+import 'antd/dist/antd.css';
+import { css } from '@emotion/css'
+import {MessageListContainer, Balloon, Text} from './styles';
+
+// Typings
+import {MEssageList} from '@typings/main';
+
 
 const MessageList: FC<MEssageList> = ({messages}) => {
     const [now, setNow] = useState('');
@@ -24,7 +31,7 @@ const MessageList: FC<MEssageList> = ({messages}) => {
             {messages.map((msg, index) => (
                 <Balloon key={index} position={msg.position} >
                     <div>
-                        <Avatar src={imoji1}/>
+                        <ImojiAvatar size={40}/>
                         박병훈
                         <time>{moment(new Date()).format("YYYY.MM.DD")}</time>
                     </div>

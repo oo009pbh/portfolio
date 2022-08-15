@@ -1,12 +1,19 @@
 import React, {FC, useState} from 'react';
-import {Container, headerWiden} from './styles';
-import { css } from '@emotion/css'
-import 'antd/dist/antd.css';
 import queryString from 'query-string';
-import { Avatar, Image } from 'antd';
 import { useNavigate, useLocation } from "react-router-dom";
+import loadable from "@loadable/component";
 
+// Images
 import imoji1 from '@profile/AR_imoji1.jpg'
+
+// Styles
+import {Container, headerWiden} from './styles';
+import 'antd/dist/antd.css';
+import { css } from '@emotion/css'
+
+// Components
+import { Avatar, Image } from 'antd';
+const ImojiAvatar = loadable(() => import('@components/ImojiAvatar'));
 
 const Header = () => {
     const location = useLocation();
@@ -30,7 +37,7 @@ const Header = () => {
     return(
         <Container>
             <span>
-                <Avatar src={imoji1} size={40}>병훈</Avatar>
+                <ImojiAvatar size={40}/>
             </span>
             <ul style={qs?.fromMain ? {} : {width:"80%"}}
                 className={qs?.fromMain ? css`animation: ${headerWiden} 1s ease; animation-fill-mode: both;` : ''}>
