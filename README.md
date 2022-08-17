@@ -19,5 +19,3 @@ url: https://main.d1fev3d9x0j2dr.amplifyapp.com/main
 
 - 프로젝트 스킬 타임라인 페이지로 구분
 - 프로필 클릭시 about 프로파일 나옴
-
-![portfolio2](C:\Users\oo009\Desktop\portfolio2.png)
