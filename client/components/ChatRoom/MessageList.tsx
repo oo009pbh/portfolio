@@ -15,6 +15,9 @@ import {MessageListContainer, Balloon, Text} from './styles';
 // Typings
 import {MEssageList} from '@typings/main';
 
+// Images
+import hi from '@icon/hi.gif'
+
 
 const MessageList: FC<MEssageList> = ({messages}) => {
     const [now, setNow] = useState('');
@@ -36,7 +39,7 @@ const MessageList: FC<MEssageList> = ({messages}) => {
                         <time>{moment(new Date()).format("YYYY.MM.DD")}</time>
                     </div>
                     <Text>
-                        {msg.text}
+                        {msg.text ? msg.text : <img alt={"hi"} src={hi}/>}
                     </Text>
                 </Balloon>
             ))}

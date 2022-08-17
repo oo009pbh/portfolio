@@ -51,3 +51,17 @@ export interface AVatar {
     size: number;
     className?: string;
 }
+
+export interface LInk {
+    github?: string;
+    url?: string;
+}
+
+export interface PRojectCard {
+    imageName: string;
+    description?: string;
+    title?: string;
+    dedication?: string;
+    skills?: string;
+    link?: LInk;
+}
