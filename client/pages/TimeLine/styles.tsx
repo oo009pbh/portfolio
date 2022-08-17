@@ -106,7 +106,7 @@ export const TimeLineBoxContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap;
+    white-space: pre;
     padding: 0 20px;
     border-radius: 6px 0 0 6px;
     z-index: 1;

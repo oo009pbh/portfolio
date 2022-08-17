@@ -28,7 +28,7 @@ const TimeLineBox : FC<TImeLine> = ({content, date, icon, title, animation, inde
         return element
     }
     return(
-        <TimeLineBoxContainer className={`type${index} animated fadeInUp delay-${index + 1}s`}>
+        <TimeLineBoxContainer className={`type3 animated fadeInUp delay-${index + 1}s`}>
             <div className="icon">
                 {renderIcon(icon)}
             </div>

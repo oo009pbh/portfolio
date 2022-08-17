@@ -12,7 +12,6 @@ const initialMessage = [
     { text: '궁금하신점이 있으시면 채팅을 입력해주세요!', position: 'left' }
 ]
 
-
 const ChatRoom: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
     const [animation, setAnimation] = useState(css`animation: ${chatRoomWiden} 0.5s ease-in-out; animation-delay: 2s; animation-fill-mode: both;`);
     const [isLoading, setIsLoading] = useState(true);
@@ -55,7 +54,7 @@ const ChatRoom: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
     return(
         <ChatRoomContainer className={animation}>
             <MessageList messages={messages}/>
-            <MessageInput />
+            <MessageInput onChangeMenu={onChangeMenu}/>
         </ChatRoomContainer>
     );
 };

@@ -15,7 +15,6 @@ const ImojiAvatar = loadable(() => import('@components/ImojiAvatar'));
 // Typings
 import { SIdeMenu } from '@typings/main';
 
-
 const SideMenu: FC<SIdeMenu> = ({onChangeMenu, menuItem, mode}) => {
 
     const [animation, setAnimation] = useState({

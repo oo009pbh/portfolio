@@ -65,3 +65,7 @@ export interface PRojectCard {
     skills?: string;
     link?: LInk;
 }
+
+export interface MEssageInput {
+    onChangeMenu: (index: number) => void;
+}

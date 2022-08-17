@@ -18,12 +18,11 @@ const Index: FC<PRofileModal> = ({isShowing, hide}) => {
     if (isShowing) {
         return ReactDOM.createPortal(
             <React.Fragment>
-                <ModalOverlay onClick={hide}/>
-                <ModalWrapper className={`animated zoomIn faster`} aria-modal aria-hidden tabIndex={-1} role="dialog">
+                <ModalOverlay/>
+                <ModalWrapper onClick={hide} className={`animated zoomIn faster`} aria-modal aria-hidden tabIndex={-1} role="dialog">
                     <div onClick={event => event.stopPropagation()} className={"modal"}>
                         <div className={"modalHeader"}>
                             <Avatar src={imoji1} size={130}/>
-
                             <div className={"modalDescription"}>
                                 <p className={"white"}>안녕하세요</p>
                                 <p className={"white"}>소통을 중시하고,</p>
