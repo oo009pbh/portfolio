@@ -50,6 +50,8 @@ export interface PRofileModal {
 export interface AVatar {
     size: number;
     className?: string;
+
+    children?: React.ReactNode;
 }
 
 export interface LInk {

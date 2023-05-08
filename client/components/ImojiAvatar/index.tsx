@@ -13,7 +13,7 @@ import { Avatar, Image } from 'antd';
 import { AVatar } from "@typings/main";
 
 // Styles
-import 'antd/dist/antd.css';
+
 import {Container} from './styles';
 
 const ImojiAvatar: FC<AVatar> = ({size, className=''}) => {

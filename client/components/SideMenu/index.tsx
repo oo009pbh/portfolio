@@ -4,7 +4,7 @@ import imoji1 from '@profile/AR_imoji1.jpg'
 
 // Styles
 import { css } from '@emotion/css'
-import 'antd/dist/antd.css';
+
 import {SideMenuContainer, Profile, Menu, profileWiden, profileShrink, menuWiden, menuShrink, avatarWiden, avatarShrink} from './styles';
 
 // Components

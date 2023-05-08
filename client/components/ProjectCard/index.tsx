@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PRojectCard } from "@typings/main";
 
 // Styles
-import 'antd/dist/antd.css';
+
 import {Container} from './styles';
 
 const ProjectCard: FC<PRojectCard> = ({imageName, description, title, dedication, skills, link}) => {

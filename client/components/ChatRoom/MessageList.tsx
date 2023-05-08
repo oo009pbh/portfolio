@@ -8,7 +8,7 @@ const ImojiAvatar = loadable(() => import('@components/ImojiAvatar'));
 import { Avatar, Image, Divider } from 'antd';
 
 // Styles
-import 'antd/dist/antd.css';
+
 import { css } from '@emotion/css'
 import {MessageListContainer, Balloon, Text} from './styles';
 

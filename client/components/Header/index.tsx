@@ -8,7 +8,7 @@ import imoji1 from '@profile/AR_imoji1.jpg'
 
 // Styles
 import {Container, headerWiden} from './styles';
-import 'antd/dist/antd.css';
+
 import { css } from '@emotion/css'
 
 // Components
