@@ -1,7 +1,9 @@
-/back/node_modules/
+/node_modules/
 /client/node_modules/
-/back/.env
+/.env
 .idea/
 /client/package-lock.json
 webPortFolioKeyFair.pem
 /client/yarn.lock
+/client/dist/
+/client/.next/
