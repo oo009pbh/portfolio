@@ -21,6 +21,5 @@ const root = createRoot(container!);
 root.render(
   <BrowserRouter>
     <Global styles={globalStyles} />
-    <MainPageRoutes />
   </BrowserRouter>,
 );
