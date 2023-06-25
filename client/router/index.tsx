@@ -1,1 +1,0 @@
-export { MainPageRoutes } from "./MainPageRoutes";

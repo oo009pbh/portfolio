@@ -5,9 +5,6 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 
-// routes
-import { MainPageRoutes } from './router';
-
 // styles
 import { Global } from '@emotion/react';
 import { globalStyles } from '@styles/globalStyle';

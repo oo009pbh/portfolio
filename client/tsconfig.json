@@ -19,9 +19,6 @@
       "@router/*": [
         "router/*"
       ],
-      "@pages/*": [
-        "pages/*"
-      ],
       "@icon/*": [
         "assets/icon/*"
       ],
@@ -54,6 +51,9 @@
       ],
       "@template/*": [
         "common/components/template/*"
+      ],
+      "@pages/*": [
+        "common/components/pages/*"
       ]
     },
     "allowJs": true,

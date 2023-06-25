@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Styles
-import { Container } from '@pages/Main/styles';
+import { Container } from '@pages/Main/styles' ;
 
 const Main = () => {
   return (

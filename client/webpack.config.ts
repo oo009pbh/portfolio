@@ -20,7 +20,6 @@ const config: Configuration = {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
       '@router': path.resolve(__dirname, 'router'),
-      '@pages': path.resolve(__dirname, 'pages'),
       '@icon': path.resolve(__dirname, 'assets/icon'),
 
       '@api': path.resolve(__dirname, 'common/api'),
@@ -33,6 +32,7 @@ const config: Configuration = {
       '@molecule': path.resolve(__dirname, 'common/components/molecule'),
       '@organism': path.resolve(__dirname, 'common/components/organism'),
       '@template': path.resolve(__dirname, 'common/components/template'),
+      '@pages': path.resolve(__dirname, 'common/components/pages'),
     },
   },
   entry: {
