@@ -9,7 +9,7 @@ import { CallBackEventFuncType, DOMEvent } from '@typings/event';
  *
  * @return {React.Ref} useOutsideClick callback 함수를 실행하고자 하는 Element 에 넣어주면 끝
  */
-const useOutsideClick: CallBackEventFuncType = (callback) => {
+const useOutsideClick: CallBackEventFuncType = callback => {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {

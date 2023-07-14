@@ -27,7 +27,7 @@ const usePost = (url: string) => {
         return data;
       }
     },
-    [url],
+    [url]
   );
 };
 

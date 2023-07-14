@@ -27,7 +27,7 @@ const addParamsToUrl: addParamsToUrlFuncType = (baseUrl, params) => {
  * @params  {String} querystring - 파라미터를 변경할 쿼리스트링
  * @returns {Object} 쿼리스트링 기반으로 생성된 객체
  */
-const querystringToObject: querystringToObjectFuncType = (querystring) => {
+const querystringToObject: querystringToObjectFuncType = querystring => {
   const searchParams = new URLSearchParams(querystring);
   const params: { [key: string]: any } = {};
 
