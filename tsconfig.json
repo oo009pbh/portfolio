@@ -30,6 +30,7 @@
       "@styles/*": ["src/common/styles/*"],
       "@typings/*": ["src/common/typings/*"],
       "@hooks/*": ["src/common/hooks/*"],
+      "@context/*": ["src/common/context/*"],
       "@components/*": ["src/common/components/*"],
       "@atom/*": ["src/common/components/atom/*"],
       "@molecule/*": ["src/common/components/molecule/*"],

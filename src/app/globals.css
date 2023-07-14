@@ -19,15 +19,6 @@ body {
   padding: 0;
   min-height: 100vh;
 }
-body {
-  font-size: 15px;
-  line-height: 1.46668;
-  font-weight: 400;
-  font-variant-ligatures: common-ligatures;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-}
 * {
   box-sizing: border-box;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
