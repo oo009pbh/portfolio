@@ -26,7 +26,7 @@ const useOutsideClick: CallBackEventFuncType = callback => {
     return () => {
       document.removeEventListener('click', handleClick);
     };
-  }, [ref]);
+  }, [callback]);
 
   return ref;
 };

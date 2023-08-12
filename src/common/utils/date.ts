@@ -8,7 +8,7 @@ import utc from 'dayjs/plugin/utc';
 import localizedFormat from 'dayjs/plugin/localizedFormat';
 
 // Type
-import { dateFuncType } from '@typings/util';
+import { DateFuncType } from '@typings/util';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -29,7 +29,7 @@ const currentLocale = Intl.DateTimeFormat().resolvedOptions().locale;
  * @returns {string} 위 포맷 조건에 따라 파싱된 date string
  */
 
-export const format: dateFuncType = (format, timestamp) => {
+export const format: DateFuncType = (format, timestamp) => {
   dayjs.locale(currentLocale || 'ko');
   const time = dayjs(timestamp).tz(currentTimeZone || 'Asia/Seoul');
 

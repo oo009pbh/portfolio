@@ -16,8 +16,12 @@ export interface AxiosResult {
 }
 
 export const isAxiosData = (data: any): data is AxiosData => {
-  if (data !== null) return false;
-  if (data instanceof FormData) return false;
+  if (data !== null) {
+    return false;
+  }
+  if (data instanceof FormData) {
+    return false;
+  }
   return typeof data === 'object';
 };
 
