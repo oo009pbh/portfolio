@@ -1,7 +1,10 @@
-import { FileData } from '@typings/file';
+import { BFSFS, FileData, FS9PV4 } from '@typings/file';
 import { BFSRequire } from 'browserfs';
 const fs = BFSRequire('fs');
 import { openDB, IDBPDatabase } from 'idb';
+import index from 'public/.index/publicFileInfo.json';
+import { ONE_TIME_PASSIVE_EVENT } from '@utils/const';
+const fsroot = index.fsroot as FS9PV4[];
 
 export const getDirRecursive = (dirPath: string): Promise<FileData[]> => {
   return new Promise((resolve, reject) => {
@@ -97,10 +100,42 @@ export const checkDatabaseExist = (): Promise<boolean> => {
   });
 };
 
-export const initializeDB = async () => {
-  return await openDB('pbh-file-system', 1, {
-    upgrade(db) {
-      db.createObjectStore('files', { keyPath: 'path' });
-    },
+export const initializeDB = (): Promise<boolean> =>
+  new Promise(resolve => {
+    const db = window.indexedDB.open('browserfs');
+
+    db.addEventListener('error', () => resolve(false), ONE_TIME_PASSIVE_EVENT);
+    db.addEventListener(
+      'success',
+      ({ target }) => {
+        resolve(true);
+
+        try {
+          db.result.close();
+        } catch {
+          // Ignore errors to close database
+        }
+
+        const { objectStoreNames } = (target as IDBOpenDBRequest)?.result || {};
+
+        if (objectStoreNames?.length === 0) {
+          try {
+            window.indexedDB.deleteDatabase('browserfs');
+          } catch {
+            // Ignore errors to delete database
+          }
+        }
+      },
+      ONE_TIME_PASSIVE_EVENT
+    );
   });
-};
+
+const FILE_ENTRY = null;
+const mapReduce9pArray = (array: FS9PV4[], mapper: (entry: FS9PV4) => BFSFS): BFSFS =>
+  array.map(mapper).reduce((a, b) => Object.assign(a, b), {});
+
+const parse9pEntry = ([name, , , pathOrArray]: FS9PV4): BFSFS => ({
+  [name]: Array.isArray(pathOrArray) ? mapReduce9pArray(pathOrArray, parse9pEntry) : FILE_ENTRY,
+});
+
+export const fs9pToBfs = (): BFSFS => mapReduce9pArray(fsroot, parse9pEntry);
