@@ -3,10 +3,15 @@ import React from 'react';
 import { DeskTopWrapper } from './styles';
 import { FileSystemProvider } from '@context/fileSystem';
 
+// Component
+import FileManager from '@template/FileManager';
+
 const Main = () => {
   return (
     <FileSystemProvider>
-      <DeskTopWrapper>My Component</DeskTopWrapper>
+      <DeskTopWrapper>
+        <FileManager />
+      </DeskTopWrapper>
     </FileSystemProvider>
   );
 };

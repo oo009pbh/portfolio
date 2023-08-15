@@ -7,7 +7,14 @@ import DeskTop from '@template/DeskTop';
 export default function Home() {
   return (
     <MainPageWrapper>
-      <Image alt="배경화면" src="/wallPaper/wp-default.png" layout="fill" objectFit="cover" quality={100} />
+      <Image
+        alt="배경화면"
+        className={'background-window'}
+        src="/wallPaper/wp-default.png"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
       <DeskTop />
       <BottomTaskBar />
     </MainPageWrapper>

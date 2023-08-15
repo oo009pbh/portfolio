@@ -3,7 +3,7 @@ import { BFSRequire } from 'browserfs';
 const fs = BFSRequire('fs');
 import { openDB, IDBPDatabase } from 'idb';
 import index from 'public/.index/publicFileInfo.json';
-import { ONE_TIME_PASSIVE_EVENT } from '@utils/const';
+import { FILE_ENTRY, ONE_TIME_PASSIVE_EVENT } from '@utils/const';
 const fsroot = index.fsroot as FS9PV4[];
 
 export const getDirRecursive = (dirPath: string): Promise<FileData[]> => {
@@ -130,7 +130,6 @@ export const initializeDB = (): Promise<boolean> =>
     );
   });
 
-const FILE_ENTRY = null;
 const mapReduce9pArray = (array: FS9PV4[], mapper: (entry: FS9PV4) => BFSFS): BFSFS =>
   array.map(mapper).reduce((a, b) => Object.assign(a, b), {});
 
