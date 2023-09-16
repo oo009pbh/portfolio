@@ -29,3 +29,10 @@ export type RootFileSystem = Omit<MountableFileSystem, 'mntMap' | 'mountList'> &
   >;
   mountList: string[];
 };
+
+export type AsyncFS = {
+  mkdir: (path: string, overwrite?: boolean) => Promise<boolean>;
+  readFile: (path: string) => Promise<Buffer>;
+  readdir: (path: string) => Promise<string[]>;
+  writeFile: (path: string, data: Buffer | string, overwrite?: boolean) => Promise<boolean>;
+};

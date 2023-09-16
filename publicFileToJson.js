@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const getFolderContents = (dirPath) => {
+const getFolderContents = dirPath => {
   const contents = [];
 
   for (const entry of fs.readdirSync(dirPath)) {
@@ -26,6 +26,9 @@ const getFolderContents = (dirPath) => {
 const publicContents = getFolderContents('./public');
 
 // Save the result to a JSON file
-fs.writeFileSync('./public/.index/publicFileInfo.json', JSON.stringify({ fsroot: publicContents, size: publicContents.length, version: 1 }, null, 2));
+fs.writeFileSync(
+  './public/.index/publicFileInfo.json',
+  JSON.stringify({ fsroot: publicContents, size: publicContents.length, version: 1 }, null, 2)
+);
 
 console.log('퍼블릭 폴더 정보를 json으로 축약합니다.');

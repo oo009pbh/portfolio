@@ -5,32 +5,32 @@ export const FileManagerContainer = styled.article`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 
   min-width: 600px;
   min-height: 450px;
   flex-shrink: 0;
 
   border-radius: 10px;
-  border: 1px solid #0E2E67;
-  background: #FFF;
+  border: 1px solid #0e2e67;
+  background: #fff;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.15);
 
   & > div.file-manager__header {
     width: 100%;
     height: 32px;
 
-    border: 1px solid #0E2E67;
+    border: 1px solid #0e2e67;
     border-radius: 10px 10px 0 0;
-    background: #0E2E67;
+    background: #0e2e67;
   }
 
   & > div.file-manager__toolbar {
     width: 100%;
     height: 24px;
 
-    border-bottom: 0.5px solid rgba(102, 102, 102, 0.50);
-    background: #FFF;
+    border-bottom: 0.5px solid rgba(102, 102, 102, 0.5);
+    background: #fff;
   }
 
   & > div.file-manager__filter {

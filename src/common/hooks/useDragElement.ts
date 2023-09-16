@@ -16,7 +16,6 @@ const useDragElement: DraggableHookResult = () => {
 
   const onMouseMove = useCallback((e: MouseEvent) => {
     if (dragRef.current instanceof HTMLElement) {
-      console.log(positionRef.current.x, positionRef.current.y);
       const deltaX = e.clientX - positionRef.current.x;
       const deltaY = e.clientY - positionRef.current.y;
       dragRef.current.style.left = `${deltaX}px`;
