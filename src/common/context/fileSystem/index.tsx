@@ -1,3 +1,4 @@
+'use client';
 import contextFactory from '@context/contextFactory';
 import useFileSystemContextState from '@context/fileSystem/useFileSystemContextState';
 

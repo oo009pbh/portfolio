@@ -1,13 +1,12 @@
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { join } from 'path';
 
 // browserfs
 import { FSModule } from 'browserfs/dist/node/core/FS';
 import { BFSRequire, configure } from 'browserfs';
 
 // Hooks
-import { getDirRecursive, saveDirRecursive, checkDatabaseExist, initializeDB } from '@context/fileSystem/fileFunctions';
+import { initializeDB } from '@context/fileSystem/fileFunctions';
 
 // Typings
 import { AsyncFS, FileSystemState, RootFileSystem } from '@typings/file';
