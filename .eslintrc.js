@@ -19,9 +19,8 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'eslint-config-prettier',
     'plugin:react/recommended',
-    'styled-components',
   ],
-  plugins: ['@typescript-eslint', 'import', 'prettier', 'react', 'react-hooks', 'styled-components'],
+  plugins: ['@typescript-eslint', 'import', 'prettier', 'react', 'react-hooks'],
   settings: { react: { version: 'detect' } },
 
   rules: {
