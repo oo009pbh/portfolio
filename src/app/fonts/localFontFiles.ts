@@ -1,6 +1,6 @@
 import localFont from 'next/font/local';
 
-export const pretendard = localFont({
+export const Pretendard = localFont({
   src: [
     {
       fontFamily: 'Pretendard',
@@ -51,4 +51,5 @@ export const pretendard = localFont({
       style: 'normal',
     },
   ],
+  preload: true,
 });
