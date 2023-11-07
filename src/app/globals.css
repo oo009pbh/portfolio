@@ -25,8 +25,8 @@ body {
 }
 
 :root {
-  --black: #0a0a0a;
-  --black-40: #404040;
+  --black-01: #0a0a0a;
+  --black-02: #1E1E1E;
   --gray-20: #f5f5f5;
   --gray-30: #ededed;
   --gray-40: #e0e0e0;

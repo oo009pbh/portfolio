@@ -6,3 +6,20 @@ export const flexCssGenerator = (justifyContent = 'center', flexDirection = 'row
   flex-direction: ${flexDirection};
   align-items: ${alignItems};
 `;
+
+export const textEllipsisGenerator = (line = 1) =>
+  line === 1
+    ? css`
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      `
+    : css`
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-word;
+
+        display: -webkit-box;
+        -webkit-line-clamp: ${line};
+        -webkit-box-orient: vertical;
+      `;
