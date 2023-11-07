@@ -39,6 +39,9 @@
       "@styles/*": [
         "src/common/styles/*"
       ],
+      "@styles": [
+        "src/common/styles"
+      ],
       "@typings/*": [
         "src/common/typings/*"
       ],

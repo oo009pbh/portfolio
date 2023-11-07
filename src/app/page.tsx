@@ -2,6 +2,8 @@
 
 // Context
 
+import { MainPageWrapper } from './styles';
+
 export default function Home() {
-  return <main>수정</main>;
+  return <MainPageWrapper>수정</MainPageWrapper>;
 }
