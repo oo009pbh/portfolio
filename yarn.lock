@@ -4116,6 +4116,11 @@ css-declaration-sorter@^6.3.1:
   resolved "https://registry.yarnpkg.com/css-declaration-sorter/-/css-declaration-sorter-6.4.1.tgz#28beac7c20bad7f1775be3a7129d7eae409a3a71"
   integrity sha512-rtdthzxKuyq6IzqX6jEcIzQF/YqccluefyCYheovBOLhFT/drQA9zj/UbRAa9J7C0o6EG6u3E6g+vKkay7/k3g==
 
+css-doodle@^0.37.3:
+  version "0.37.3"
+  resolved "https://registry.yarnpkg.com/css-doodle/-/css-doodle-0.37.3.tgz#db2e415f55a3ef717fe81eea4c172c0cabe9bdba"
+  integrity sha512-iBKubIQk+dFtlp94WlLei/3CsC17wEEkvZ3e/tP1aCpJ0U2oDk66TPEXtqw8EmEOY85bIgYV5/UOzIK1oNhSpA==
+
 css-has-pseudo@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/css-has-pseudo/-/css-has-pseudo-3.0.4.tgz#57f6be91ca242d5c9020ee3e51bbb5b89fc7af73"
