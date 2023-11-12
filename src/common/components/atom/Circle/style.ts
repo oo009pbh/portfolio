@@ -1,3 +1,5 @@
+'use client';
+
 import styled, { css } from 'styled-components';
 
 // typings
@@ -13,7 +15,10 @@ export const CircleStyles: ICssArchive = {
     color: #d9d9d9;
     font-size: 2rem;
 
-    border: 2px solid #bab7d2;
+    border: 0.2rem solid transparent;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(90deg, #ffffff 30%, #bab7d2 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
     border-radius: 100%;
   `,
 };

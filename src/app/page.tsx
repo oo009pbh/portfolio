@@ -1,10 +1,23 @@
+'use client';
+
 // Components
 import { Circle } from '@atom';
 
 // Context
 import { MainPageWrapper } from './styles';
+import { css } from 'styled-components';
 
 export default function Home() {
+  const circles = [
+    { name: 'PORTFOLIO', size: 'large' },
+    { name: 'EXPERIENCE', size: 'medium' },
+    {
+      name: 'EXPERTISE',
+      size: 'small',
+    },
+    { name: 'CONTACT', size: 'xSmall' },
+  ];
+
   return (
     <MainPageWrapper>
       <section className={'main__title'}>
@@ -15,10 +28,18 @@ export default function Home() {
         </span>
       </section>
       <section className={'main__content'}>
-        <Circle label={'PORTFOLIO'} size={'large'} />
-        <Circle label={'EXPERIENCE'} size={'medium'} />
-        <Circle label={'EXPERTISE'} size={'small'} />
-        <Circle label={'CONTACT'} size={'xSmall'} />
+        {circles.map((circle, index) => {
+          return (
+            <Circle
+              key={circle.name}
+              label={circle.name}
+              size={circle.size}
+              customStyle={css`
+                z-index: ${circles.length - index};
+              `}
+            />
+          );
+        })}
       </section>
     </MainPageWrapper>
   );

@@ -36,6 +36,7 @@ export const MainPageWrapper = styled.main`
     width: 100%;
 
     & > div {
+      text-indent: 5.5rem;
       margin-left: -5.5rem;
     }
   }
