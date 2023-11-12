@@ -57,6 +57,9 @@
       "@components/*": [
         "src/common/components/*"
       ],
+      "@atom": [
+        "src/common/components/atom"
+      ],
       "@atom/*": [
         "src/common/components/atom/*"
       ],

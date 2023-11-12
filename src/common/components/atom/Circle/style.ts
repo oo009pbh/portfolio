@@ -4,37 +4,42 @@ import styled, { css } from 'styled-components';
 import { ICssArchive } from '@typings';
 import { ICircle } from '@typings/components/atom/Circle';
 
+// styles
+import { flexCssGenerator } from '@styles';
+
 export const CircleStyles: ICssArchive = {
   default: css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    ${flexCssGenerator('inline-flex')};
+    color: #d9d9d9;
+    font-size: 2rem;
 
-    border-radius: 4px;
-    box-sizing: border-box;
-    border: none;
-    cursor: pointer;
+    border: 2px solid #bab7d2;
+    border-radius: 100%;
   `,
 };
 
 export const CircleSizes: ICssArchive = {
   large: css`
-    height: 32px;
-    line-height: 32px;
-    padding: 0 36px;
+    width: 30.3rem;
+    height: 30.3rem;
   `,
   medium: css`
-    height: 32px;
-    line-height: 32px;
-    padding: 0 24px;
+    width: 25.9rem;
+    height: 25.9rem;
   `,
   small: css`
-    height: 24px;
-    line-height: 24px;
-    padding: 0 12px;
+    width: 22.2rem;
+    height: 22.2rem;
+  `,
+  xSmall: css`
+    width: 17.6rem;
+    height: 17.6rem;
   `,
 };
 
 export const CircleWrapper = styled.div<ICircle>`
+  ${CircleStyles.default}
+  ${props => props.size && CircleSizes[props.size]}
+  ${props => props.variant && CircleStyles[props.variant]}
   ${props => props.customStyle}
 `;

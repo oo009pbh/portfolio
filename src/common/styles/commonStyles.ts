@@ -1,7 +1,12 @@
 import { css } from 'styled-components';
 
-export const flexCssGenerator = (justifyContent = 'center', flexDirection = 'row', alignItems = 'center') => css`
-  display: flex;
+export const flexCssGenerator = (
+  display = 'flex',
+  justifyContent = 'center',
+  flexDirection = 'row',
+  alignItems = 'center'
+) => css`
+  display: ${display};
   justify-content: ${justifyContent};
   flex-direction: ${flexDirection};
   align-items: ${alignItems};
