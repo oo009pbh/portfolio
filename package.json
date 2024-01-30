@@ -17,7 +17,7 @@
     "css-doodle": "^0.37.3",
     "dayjs": "^1.11.9",
     "eslint-config-next": "^14.0.1",
-    "next": "14.0.1",
+    "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sanitize.css": "^13.0.0",

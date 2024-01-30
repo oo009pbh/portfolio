@@ -5,10 +5,7 @@ const nextConfig = {
     disableStaticImages: true,
   },
   compiler: {
-    styledComponents: {
-      displayName: true,
-      ssr: true,
-    },
+    styledComponents: true,
   },
 };
 
