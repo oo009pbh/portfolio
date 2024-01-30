@@ -4,40 +4,31 @@ import { flexCssGenerator } from '@styles';
 
 export const MainPageWrapper = styled.main`
   ${flexCssGenerator('flex', 'center', 'column', 'flex-start')};
-
   width: 100%;
   height: 100%;
-  padding: 9.7rem 14rem 19.8rem 14rem;
-  gap: 8.9rem;
+  padding: 3rem 5rem;
 
-  & > section.main__title {
-    width: 60.6rem;
-    height: 14.5rem;
+  & > section.main__left {
+    & > div.main__title {
+      width: 45rem;
+      height: 9rem;
 
-    & span {
-      color: var(--black-02);
-      font-size: 5.4rem;
-      font-weight: 500;
-      line-height: 8.2rem;
-    }
+      & span {
+        color: var(--black-02);
+        font-size: 2.8rem;
+        font-weight: 500;
+        line-height: 4.5rem;
+      }
 
-    & strong {
-      color: var(--black-02);
-      font-size: 6.4rem;
-      font-weight: 700;
-      line-height: 8.2rem;
-      letter-spacing: 0.0896rem;
+      & strong {
+        color: var(--black-02);
+        font-size: 2.8rem;
+        font-weight: 700;
+        line-height: 4.5rem;
+      }
     }
   }
 
-  & > section.main__content {
-    ${flexCssGenerator('flex')};
-
-    width: 100%;
-
-    & > div {
-      text-indent: 5.5rem;
-      margin-left: -5.5rem;
-    }
+  & > section.main__right {
   }
 `;

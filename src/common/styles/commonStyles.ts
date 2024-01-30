@@ -4,9 +4,9 @@ import { css } from 'styled-components';
 
 export const flexCssGenerator = (
   display = 'flex',
-  justifyContent = 'center',
-  flexDirection = 'row',
-  alignItems = 'center'
+  justifyContent = 'flex-start',
+  alignItems = 'stretch',
+  flexDirection = 'row'
 ) => css`
   display: ${display};
   justify-content: ${justifyContent};
@@ -14,19 +14,12 @@ export const flexCssGenerator = (
   align-items: ${alignItems};
 `;
 
-export const textEllipsisGenerator = (line = 1) =>
-  line === 1
-    ? css`
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-      `
-    : css`
-        text-overflow: ellipsis;
-        overflow: hidden;
-        word-break: break-word;
+export const textEllipsisGenerator = (line = 1) => css`
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
 
-        display: -webkit-box;
-        -webkit-line-clamp: ${line};
-        -webkit-box-orient: vertical;
-      `;
+  display: -webkit-box;
+  -webkit-line-clamp: ${line};
+  -webkit-box-orient: vertical;
+`;
