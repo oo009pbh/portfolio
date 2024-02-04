@@ -23,3 +23,15 @@ export const textEllipsisGenerator = (line = 1) => css`
   -webkit-line-clamp: ${line};
   -webkit-box-orient: vertical;
 `;
+
+export const fontGenerator = (
+  fontSize = '1.5rem',
+  fontWeight = 'normal',
+  lineHeight = 'normal',
+  letterSpacing = 'normal'
+) => css`
+  font-size: ${fontSize};
+  font-weight: ${fontWeight};
+  line-height: ${lineHeight};
+  letter-spacing: ${letterSpacing};
+`;

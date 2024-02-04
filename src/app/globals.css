@@ -23,6 +23,7 @@ body {
   sans-serif;
   margin: 0;
   padding: 0;
+  height: 100vh;
   min-height: 100vh;
 }
 
@@ -48,6 +49,7 @@ body {
   --gray-70: #757575;
   --gray-80: #616161;
   --gray-90: #404040;
+  --blue-01: #002B64;
   --white: #ffffff;
   --primary: #f2a93c;
 }
