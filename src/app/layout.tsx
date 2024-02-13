@@ -6,11 +6,11 @@ import Head from 'next/head';
 
 // Styles
 import './globals.css';
-import { notoSans } from './fonts/localFontFiles';
+import { notoSans, pretendard } from './fonts/localFontFiles';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={notoSans.className}>
+    <html lang="en" className={notoSans.className + pretendard.className}>
       <Head>
         <title>박병훈의 웹 포트폴리오</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />

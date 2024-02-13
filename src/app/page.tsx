@@ -12,8 +12,8 @@ export default function Home() {
           <Image
             src="/bg/bg-profile.jpg"
             objectFit={'contain'}
-            width={320}
-            height={320}
+            width={300}
+            height={300}
             alt="Picture of the Park Byeong Hoon"
           />
         </div>
@@ -28,13 +28,14 @@ export default function Home() {
       <section className="main__summary">
         <div className="about__tag">ABOUT ME</div>
         <article className="about__title">
-          사용하기 편한 <br />
-          컴포넌트 개발을 지향합니다.
+          사용하기 편한 컴포넌트
+          <br />
+          개발을 지향합니다.
         </article>
         <article className="about__description">
-          Si 스타트업에서 2년 6개월째 프론트엔드 개발을 맡고 있으며, 읽기 쉬운 코드로 금방 사용법을 알 수 있는
-          컴포넌트를 개발 하는 것을 좋아합니다. 기획자, 디자이너, 타 개발자 분들과 소통하여 전체 개발 일정을 조율하고
-          프로젝트를 출시하는 것에 큰 보람을 느낍니다.
+          Si 스타트업에서 2년 6개월째 프론트엔드 개발을 맡고 있으며, <br />
+          읽기 쉬운 코드로 금방 사용법을 알 수 있는 컴포넌트를 개발 하는 것을 좋아합니다. 기획자, 디자이너, 타 개발자
+          분들과 소통하며 전체 개발 일정을 조율하고 프로젝트를 출시하는 것에 큰 보람을 느낍니다.
         </article>
         <article className="about__info">
           <div className="about__info--category">Education</div>
