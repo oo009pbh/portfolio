@@ -8,22 +8,33 @@ export default function Home() {
   return (
     <MainPageWrapper>
       <section className="main__profile">
-        <div className={'main__image'}>
-          <Image
-            src="/bg/bg-profile.jpg"
-            objectFit={'contain'}
-            width={300}
-            height={300}
-            alt="Picture of the Park Byeong Hoon"
-          />
-        </div>
-        <article className={'main__title'}>
-          <span>안녕하세요,</span>
-          <br />
-          <span>
-            저는 개발자 <strong>박병훈</strong> 입니다.
-          </span>
+        <article className="main__profile--content">
+          <div className={'main__profile--image'}>
+            <Image
+              src="/bg/bg-profile.jpg"
+              objectFit={'contain'}
+              width={300}
+              height={300}
+              alt="Picture of the Park Byeong Hoon"
+            />
+          </div>
+          <div className="main__profile--title">
+            <span>안녕하세요,</span>
+            <br />
+            <span>
+              저는 개발자 <strong>박병훈</strong> 입니다.
+            </span>
+          </div>
         </article>
+        <div className="main__link--container">
+          <div className="main__link--title">CONNECT WITH ME</div>
+          <div className="main__link--content">
+            <Image src="/icon/ic-mail.svg" width={32} height={32} alt="mail link" />
+            <Image src="/icon/ic-github.svg" width={32} height={32} alt="github link" />
+            <Image src="/icon/ic-linkedin.svg" width={32} height={32} alt="linkedin link" />
+            <Image src="/icon/ic-velog.svg" width={32} height={32} alt="velog link" />
+          </div>
+        </div>
       </section>
       <section className="main__summary">
         <div className="about__tag">ABOUT ME</div>

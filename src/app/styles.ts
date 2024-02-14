@@ -3,36 +3,51 @@ import styled from 'styled-components';
 import { flexCssGenerator, fontGenerator } from '@styles';
 
 export const MainPageWrapper = styled.main`
-  ${flexCssGenerator('flex', 'center', 'flex-start', 'flex-start')};
+  ${flexCssGenerator('flex', 'center', 'flex-start')};
   width: 100%;
   height: 100%;
   padding: 8rem 5rem;
+  position: relative;
 
   & > section.main__profile {
     width: 55rem;
+    height: 100%;
+    ${flexCssGenerator('flex', 'space-between', 'flex-start', 'column')};
 
-    & > div.main__image {
-      width: 30rem;
-      height: 30rem;
-      margin-bottom: 3rem;
-    }
-
-    & > article.main__title {
-      width: 45rem;
-      height: 8rem;
-
-      & span {
-        color: var(--black-02);
-        ${fontGenerator('3.5rem', '400', '4rem')}
+    & > article.main__profile--content {
+      & > div.main__profile--image {
+        width: 30rem;
+        height: 30rem;
+        margin-bottom: 3rem;
       }
 
-      & strong {
-        color: var(--black-02);
-        ${fontGenerator('3.5rem', '500', '4rem')}
+      & > div.main__profile--title {
+        width: 45rem;
+        height: 8rem;
+
+        & span {
+          color: var(--black-02);
+          ${fontGenerator('3.5rem', '400', '4rem')}
+        }
+
+        & strong {
+          color: var(--black-02);
+          ${fontGenerator('3.5rem', '500', '4rem')}
+        }
       }
     }
 
-    & > div.main__links {
+    & > div.main__link--container {
+      & > div.main__link--title {
+        ${fontGenerator('1.6rem', '400', '2.2rem')}
+
+        margin-bottom: 1.5rem;
+      }
+
+      & > div.main__link--content {
+        ${flexCssGenerator('flex', 'flex-start', 'center')};
+        gap: 1.3rem;
+      }
     }
   }
 
