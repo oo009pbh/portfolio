@@ -1,7 +1,5 @@
 # 박병훈의 웹 포트폴리오 📔version 0.1
 
-url: https://main.d1fev3d9x0j2dr.amplifyapp.com/main
-
 ### 0.2 version 에서 업데이트 할 사항
 
 1. skills  툴팁 적용해서 어떠한 내용인지 설명하기
